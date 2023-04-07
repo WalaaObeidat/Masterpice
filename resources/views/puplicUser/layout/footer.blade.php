@@ -8,7 +8,7 @@
             <a class="logo" href="{{ route('puplicUser.welcome') }}"><img src="img/logo.png" class="hires" width="150" height="80" alt="Free Bootstrap Template by uicookies.com"></a>
 
       </div>
-      <div class="box">
+      {{-- <div class="box">
           <h3>Home</h3>
           <a href="./disgin.html" ><p>Designs</p></a> 
           <a href="./Customize.html"><p>Customize</p></a>
@@ -21,15 +21,15 @@
            <a href="./contactus.html"><p>Contact</p> </a>
            <a href="../login/login.html"><p>Login</p> </a>
           
-      </div>
-      <div class="box">
+      </div> --}}
+      {{-- <div class="box">
         <h3>Contact Us</h3>
         <li> <span>Aqaba,Jordan</span></li>
         <li><span>info@DesgnQueen.com</span></li>
         <li><span>+962 791148057 </span></li>
         
-    </div>
-      {{-- <div class="col-md-4">
+    </div> --}}
+       {{-- <div class="col-md-4">
         <div class="probootstrap-footer-widget">
           <h3>Contact</h3>
           <ul class="probootstrap-contact-info">
@@ -39,8 +39,8 @@
           </ul>
 
         </div>
-      </div> --}}
-  </div>
+      </div> 
+  </div> --}}
   <div class="row mt40">
     <div class="col-md-12 text-center">
       <ul class="probootstrap-footer-social">
@@ -53,6 +53,6 @@
     </div>
   </div>
 </div>
-  <h1 class="credit"> created by <span><a href="https://freewebsitecode.com/">Disgin Queen</a></span> | all rights reserved! </h1>
+  <h1 class="credit"> created by <span><a href="https://freewebsitecode.com/">Designs Queen</a></span> | all rights reserved! </h1>
 
 </section>

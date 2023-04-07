@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
+use App\Models\Categories;
+use App\Models\Designs;
 use Illuminate\Http\Request;
 
 class masterController extends Controller
@@ -13,7 +15,11 @@ class masterController extends Controller
      */
     public function index()
     {
-        return view('puplicUser.welcome');
+
+        $categories = Categories::All();
+        
+
+        return view('puplicUser.welcome',compact('categories'));
     }
 
     /**
@@ -45,7 +51,7 @@ class masterController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

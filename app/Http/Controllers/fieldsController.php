@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
+use App\Models\Designs;
 use Illuminate\Http\Request;
 
-class masterController extends Controller
+class fieldsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class masterController extends Controller
      */
     public function index()
     {
-        return view('puplicUser.welcome');
+        //
+        $playgrounds= Playgrounds::all();
+        return view('puplicUser.fieldsItem', compact('playgrounds'));
+        
     }
 
     /**

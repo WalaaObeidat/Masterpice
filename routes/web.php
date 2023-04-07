@@ -2,12 +2,22 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\DesiginsController;
+use App\Http\Controllers\Admin\ReservationsController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\reservationController;
+use App\Http\Controllers\UserReservationController;
+use App\Http\Controllers\UserItemsController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\searchController;
+use App\Http\Controllers\ProfileEditController;
+use App\Http\Controllers\fieldsController;
+
 
 
 
@@ -66,3 +76,4 @@ Route::get('/Edit',function(){
 Route::get('singleItem',function(){
     return view('singleItem');
 });
+

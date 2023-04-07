@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Reservations;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,4 +42,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
+
+   
+        public function Reservations(){
+            return $this->hasMany(Reservations::class);
+        
+        }
+
+          
+        // public function Reservations(){
+        //     return $this->hasOne(Reservations::class);
+        
+        // }
+    }
+

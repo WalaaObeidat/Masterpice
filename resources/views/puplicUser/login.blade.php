@@ -1,4 +1,9 @@
 @extends('puplicUser.layout.master')
+{{-- @include('puplicUser.layout.head')
+@include('puplicUser.layout.script')
+@include('puplicUser.layout.new') --}}
+
+
 @section('title')
 login
 @endsection

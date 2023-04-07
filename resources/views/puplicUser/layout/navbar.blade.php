@@ -12,8 +12,8 @@
 
   <nav class="navbar">
       <a href="{{ route('puplicUser.welcome') }}">Home</a>
-      <a href="{{ url('/about') }}">About</a>
       <a href="{{ route('puplicUser.fields')}}">Designs</a>
+      <a href="{{ url('/about') }}">About</a>
       <a href="{{ url('/contact') }}">Contact</a>
   </nav>
 

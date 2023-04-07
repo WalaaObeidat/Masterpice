@@ -6,17 +6,18 @@ use App\Models\designs;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 
-class designsController extends Controller
+class DesignsController extends Controller
 {
-     /**
+   
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $designs= designs::all();
-        return view('Admin.designs', compact('designs'));
+        $Designs= Designs::all();
+        return view('Admin.Designs', compact('Designs'));
     }
 
     /**
@@ -29,7 +30,7 @@ class designsController extends Controller
         // $playgrounds= Playgrounds::with('Categories')->get();
         $categories= Categories::all();
 
-        return view('Admin.designsAdd',compact('categories'));
+        return view('Admin.DesignsAdd',compact('categories'));
        
     }
 
@@ -41,32 +42,32 @@ class designsController extends Controller
      */
     public function store(Request $request)
     {
-        $designs = New designs();
-        $designs->name = $request->name;
-        $designs->price = $request->price;
-        $designs->description = $request->description;
-        $designs->category_id = $request->category_id;
+        $Designs = New Designs();
+        $pDesigns->name = $request->name;
+        $Designs->price = $request->price;
+        $Designs->description = $request->description;
+        $Designs->category_id = $request->category_id;
 
         $photoName = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/image', $photoName);
-        $pdesigns->image = $photoName;
-        $designs->save();
-        return redirect()->route('designs.index');
+        $Designs->image = $photoName;
+        $Designs->save();
+        return redirect()->route('Designs.index');
         // return view('Admin.categories');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\designs  $Playgrounds
+     * @param  \App\Models\Designs  $Designs
      * @return \Illuminate\Http\Response
      */
-    public function show(designs $categories,$id)
+    public function show(Designs $categories,$id)
     {
-        $designsDetails = designs::findorFail($id);
-        $categories = Categories::findorFail($designsDetails->category_id);
+        $DesignsDetails = Designs::findorFail($id);
+        $categories = Categories::findorFail($DesignsDetails->category_id);
 
-        //    $playgroundsDetails = Playgrounds::with('Categories')->get();
+        //    $DesignsDetails =Designs::with('Categories')->get();
            
 
         // $categories = Categories::get();
@@ -85,35 +86,35 @@ class designsController extends Controller
 
         //     ];
         // }
-        return view('Admin.designsDetails',compact('designsDetails', 'categories'));
+        return view('Admin.DesignsDetails',compact('playgroundsDetails', 'categories'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\designs  $Playgrounds
+     * @param  \App\Models\Designs  $Designs
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         // $categories = Categories::all();
-        $designsEdit = designs::findorFail($id);
-        // $playgroundsEdit = Playgrounds::where();
-        $designsCat=Categories::all();
-        // $playgroundsCat= Playgrounds::with('Categories')->get();
-        //    $Playgrounds = Categories::where('id',$id)->first(); //  method 2 -- when id = id - get the data of the first row
-           return view('Admin.designsEdit',compact('designsEdit', 'designsCat'));
+        $DesignsEdit = Designs::findorFail($id);
+        // $DesignsEdit = Designs::where();
+        $DesignsCat=Categories::all();
+        // $DesignsCat= Designs::with('Categories')->get();
+        //    $Designs = Categories::where('id',$id)->first(); //  method 2 -- when id = id - get the data of the first row
+           return view('Admin.DesignsEdit',compact('DesignsEdit', 'DesignsCat'));
         //    $data = [];
-        //    foreach ($playgroundsEdit as $playgrounds) {
+        //    foreach ($DesignsEdit as $Designs) {
         //        $data[] = [
-        //            'id' => $playgrounds->id,
-        //            'name' => $playgrounds->name,
-        //            'description' => $playgrounds->description,
-        //            'price' => $playgrounds->price,
-        //            'image' => isset($playgrounds->category_id) ? $playgrounds->name->category_id : ""
+        //            'id' => $Designs->id,
+        //            'name' => $Designs->name,
+        //            'description' => $Designs->description,
+        //            'price' => $Designs->price,
+        //            'image' => isset($Designs->category_id) ? $Designs->name->category_id : ""
         //        ];
         //    };
-        //    return view('Admin.playgroundsEdit',compact('data'));
+        //    return view('Admin.DesignsEdit',compact('data'));
        }
     
 
@@ -121,25 +122,25 @@ class designsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\designs $categories
+     * @param  \App\Models\Designs $categories
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,$id)
     {
-        $designsEdit = designs::findorFail($id);
-        $designsEdit->update($request->all());
-        return redirect()->route('designs.index');
+        $DesignsEdit = Designs::findorFail($id);
+        $DesignsEdit->update($request->all());
+        return redirect()->route('Designs.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\designs  $categories
+     * @param  \App\Models\Designs  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(designs $categories,$id)
+    public function destroy(Designs$categories,$id)
     {
-        designs::destroy($id);
-        return redirect()->route('designs.index');
-    }
+        Designs::destroy($id);
+        return redirect()->route('Designs.index');
+    } 
 }
